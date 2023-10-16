@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Griglia Campo Minato</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/main.js" async type="text/javascript"></script>
+  </head>
+  <body class="select-none relative bg-[#1a2c38] text-white">
+    <main class="w-full h-[100vh] flex justify-center">
+      <div
+        id="domNotification"
+        class="fixed top-20 right-4 p-5 bg-[#0f212e] rounded z-50 text-white transition-opacity opacity-0 duration-500"
+      >
+        <span>Game over! You picked the wrong cell...</span>
+      </div>
+      <div class="container my-0 mx-auto transition-all">
+        <section class="flex flex-col gap-2 px-5 items-start">
+          <div class="flex gap-4 items-center mt-8">
+            <span>Select the difficulty:</span>
+            <select name="difficulty" id="domDiff" class="py-2 px-3 rounded">
+              <option value="10">Easy</option>
+              <option value="9">Medium</option>
+              <option value="7">Hard</option>
+            </select>
+          </div>
+          <button
+            id="domStartGame"
+            class="bg-slate-700 mb-3 text-white py-2 px-5 rounded disabled:cursor-not-allowed disabled:bg-slate-500"
+          >
+            Play!
+          </button>
+          <div class="flex self-center items-center justify-center text-2xl">
+            <span class="text-center">Score: <bold id="domScore" class="text-red-500 font-bold">0</bold></span>
+          </div>
+          <div class="relative flex items-center justify-center flex-col w-full bg-[#0f212e] rounded-2xl">
+            <div class="grid-block hidden" id="domPreventClick"></div>
+            <div id="domGrid" class="grid gap-3 self-center"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
